@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+House.destroy_all
+
+8.times do
+    house = House.create(name: Faker::Movies::HarryPotter.unique.house, points: Faker::Number.number(digits: 2))
+
+end
+
+puts "Seeding Complete"

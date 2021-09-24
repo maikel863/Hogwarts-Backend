@@ -25,8 +25,7 @@ end
 10.times do
    student = Student.all.sample
    teacher = Teacher.all.sample
-   days_in_the_future = Faker::Number.number(digits: 2)
-   date  = Faker::Time.forward(days_in_the_future, :morning)
+   date  = Faker::Time.forward(days: 8, period: :morning)
    Appointment.create(student: student, teacher: teacher, meeting_time: date)
 
 end
